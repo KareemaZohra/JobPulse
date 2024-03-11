@@ -1,0 +1,16 @@
+.home-banner{
+    background-image: url("../img/home_banner.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+.navbar-brand{
+    color: #0047AB!important;
+    font-weight: 600;
+}
+#footer{
+    padding: 150px;
+    background-color:#0047AB;
+    color:white;
+    text-align: center;
+}

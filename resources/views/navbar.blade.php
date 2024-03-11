@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">JobPulse</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,16 +10,16 @@
                     <a class="nav-link" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/products">Products</a>
+                    <a class="nav-link" href="/products">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/add-product">Add Product</a>
+                    <a class="nav-link" href="/add-product">Jobs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard">Dashboard</a>
+                    <a class="nav-link" href="/dashboard">Blogs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/transaction">Transaction</a>
+                    <a class="nav-link" href="/transaction">Contact</a>
                 </li>
             </ul>
             <form class="d-flex">
