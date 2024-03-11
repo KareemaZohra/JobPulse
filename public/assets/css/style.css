@@ -14,3 +14,14 @@
     color:white;
     text-align: center;
 }
+.spacer{
+    height: 150px;
+    width: 100%;
+}
+
+.company-card{
+    background-color:#0047AB;
+    padding: 100px 0 150px 0;
+    width: 100%;
+    color: white;
+}
