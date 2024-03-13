@@ -18,4 +18,14 @@ class JobsController extends Controller
 
         return view('Jobs.allJobs',compact('recentJobs'));
     }
+
+    public function jobDetail($id){
+
+        $job = Jobs::where('id',$id)->first();
+
+        $skills = explode(',', $job->tags);
+        $job->tags = $skills;
+
+        return view('Jobs.jobDetail',compact('job'));
+    }
 }

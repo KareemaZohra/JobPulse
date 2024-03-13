@@ -11,7 +11,7 @@
             <div class="col-4">
                 <button type="button" class="btn btn-info">{{$recentJob->salary}}</button>
                 <button type="button" class="btn btn-primary">Apply</button>
-                <button type="button" class="btn btn-secondary">View Details</button>
+                <a href="/job/{{$recentJob->id}}" type="button" class="btn btn-secondary">View Details</a>
             </div>
         </div>
     </div>

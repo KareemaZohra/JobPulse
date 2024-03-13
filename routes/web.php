@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'index']);
 
 Route::get('/jobs/all',[JobsController::class,'allJobs']);
-
+Route::get('/job/{id}',[JobsController::class,'jobDetail']);
