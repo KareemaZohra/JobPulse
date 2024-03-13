@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -9,6 +10,7 @@
             </div>
         </div>
     </div>
+
     <div class="container">
        <div class="spacer"></div>
         <h1 class="text-center">Our Top Companies</h1>
@@ -22,6 +24,7 @@
         </div>
         <div class="spacer"></div>
     </div>
+
     <div class="container">
         <h1 class="text-center">Recent Published Jobs</h1>
         <br><br>
@@ -32,6 +35,11 @@
                 @endforeach
             </div>
         </div>
+        <br><br>
+        <div class="row">
+            @include('Jobs.allJobs')
+        </div>
+        <div class="spacer"></div>
     </div>
 
 @endsection

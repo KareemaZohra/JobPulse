@@ -13,12 +13,17 @@ class HomeController extends Controller
     public function index(){
         $topCompanies = User::take(5)->where('status','active')->get();
 
-        $jobsByCategory = DB::table('jobs')
-            ->select('category', DB::raw('count(*) as total'))
-            ->groupBy('category')
-            ->get();
+        $jobsByCategory = Jobs::select('category', DB::raw('count(*) as total'))
+                                ->groupBy('category')
+                                ->get();
 
+        $recentJobs = Jobs::orderBy('created_at','DESC')->take(10)->paginate(5);
 
-        return view('home', compact('topCompanies','jobsByCategory'));
+        foreach( $recentJobs as $recentJob){
+            $skills = explode(',', $recentJob->tags);
+            $recentJob->categories = $skills;
+        }
+
+        return view('home', compact('topCompanies','jobsByCategory','recentJobs'));
     }
 }

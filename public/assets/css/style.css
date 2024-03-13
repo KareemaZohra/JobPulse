@@ -25,3 +25,13 @@
     width: 100%;
     color: white;
 }
+
+.job-card{
+    padding: 50px;
+    border: 1px solid gainsboro;
+    margin: 30px;
+}
+.paginate{
+    width: max-content;
+    margin: auto;
+}
