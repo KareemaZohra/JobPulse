@@ -21,7 +21,7 @@ class HomeController extends Controller
 
         foreach( $recentJobs as $recentJob){
             $skills = explode(',', $recentJob->tags);
-            $recentJob->categories = $skills;
+            $recentJob->tags = $skills;
         }
 
         return view('home', compact('topCompanies','jobsByCategory','recentJobs'));

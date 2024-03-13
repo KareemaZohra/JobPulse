@@ -10,16 +10,16 @@
                     <a class="nav-link" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/products">About</a>
+                    <a class="nav-link" href="/admin/about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/add-product">Jobs</a>
+                    <a class="nav-link" href="/jobs/all">Jobs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard">Blogs</a>
+                    <a class="nav-link" href="/blogs/all">Blogs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/transaction">Contact</a>
+                    <a class="nav-link" href="/admin/contact">Contact</a>
                 </li>
             </ul>
             <form class="d-flex">
