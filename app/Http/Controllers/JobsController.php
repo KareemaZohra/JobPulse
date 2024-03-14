@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JobCandidateMapping;
 use App\Models\Jobs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class JobsController extends Controller
 {
@@ -27,5 +29,21 @@ class JobsController extends Controller
         $job->tags = $skills;
 
         return view('Jobs.jobDetail',compact('job'));
+    }
+
+    public function applyJob($id){
+
+        $row = JobCandidateMapping::create([
+            'job_id' => $id,
+            'user_id' => Auth::id()
+        ]);
+
+        if($row){
+            return view('Jobs.applySuccess');
+        }
+        else{
+            return view('general.error');
+        }
+
     }
 }

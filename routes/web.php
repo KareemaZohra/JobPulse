@@ -23,6 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/jobs/all',[JobsController::class,'allJobs']);
 Route::get('/job/{id}',[JobsController::class,'jobDetail']);
+Route::post('/job/{id}',[JobsController::class,'applyJob']);
 
 Route::get('/dashboard',[DashboardController::class,'show']);
 
