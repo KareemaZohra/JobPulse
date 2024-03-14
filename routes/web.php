@@ -28,4 +28,5 @@ Route::get('/dashboard',[DashboardController::class,'show']);
 
 Route::get('/dashboard/admin/dashboard',[DashboardController::class,'adminDashboard'])->name('admin.dashboard');
 Route::get('/dashboard/admin/companies',[DashboardController::class,'adminCompanies'])->name('admin.companies');
+Route::get('/dashboard/admin/jobs',[DashboardController::class,'adminJobs'])->name('admin.jobs');
 

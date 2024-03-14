@@ -33,4 +33,10 @@ class DashboardController extends Controller
 
         return view('Dashboard.admin.companies',compact('companies'));
     }
+
+    public function adminJobs(){
+        $jobs = Jobs::paginate(5);
+
+        return view('Dashboard.admin.jobs',compact('jobs'));
+    }
 }
