@@ -15,8 +15,11 @@
             </div>
             <div class="col-2"></div>
             <div class="col-2">
-                <button type="button" class="btn btn-info">{{$job->salary}}</button>
-                <button type="button" class="btn btn-primary">Apply</button>
+                <button type="button" class="btn btn-info mb-3">{{$job->salary}}</button>
+                <form action="/job/{{$job->id}}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-primary">Apply</button>
+                </form>
             </div>
         </div>
     </div>
