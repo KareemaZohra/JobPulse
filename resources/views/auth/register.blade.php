@@ -65,7 +65,8 @@
                             <select class="form-select" aria-label="Default select example" name="role" style="width: 200px; display: block; margin: auto">
                                 <option selected>Sign up as</option>
                                 <option value="company">Company</option>
-                                <option value="employee">Company Employee</option>
+                                <option value="manager">Company Manager</option>
+                                <option value="editor">Company Editor</option>
                                 <option value="candidate">Candidate</option>
                             </select>
                         </div>

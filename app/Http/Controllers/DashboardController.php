@@ -39,4 +39,10 @@ class DashboardController extends Controller
 
         return view('Dashboard.admin.jobs',compact('jobs'));
     }
+
+    public function adminEmployees(){
+        $employees = User::where('role','!=','company')->where('role','!=','admin')->paginate(5);
+
+        return view('Dashboard.admin.employees',compact('employees'));
+    }
 }
