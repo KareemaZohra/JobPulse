@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     //
     public function index(){
-        $topCompanies = User::take(5)->where('status','active')->get();
+        $topCompanies = User::take(5)->where('status','active')->where('role','company')->get();
 
         $jobsByCategory = Jobs::select('category', DB::raw('count(*) as total'))
                                 ->groupBy('category')
@@ -25,9 +25,6 @@ class HomeController extends Controller
             $recentJob->tags = $skills;
         }
 
-        $userId = Auth::id();
-        $user = User::with('userRoleMapping')->where('id',$userId)->first();
-
-        return view('home', compact('topCompanies','jobsByCategory','recentJobs','user'));
+        return view('home', compact('topCompanies','jobsByCategory','recentJobs'));
     }
 }
