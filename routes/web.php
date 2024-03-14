@@ -19,3 +19,7 @@ Route::get('/',[HomeController::class,'index']);
 
 Route::get('/jobs/all',[JobsController::class,'allJobs']);
 Route::get('/job/{id}',[JobsController::class,'jobDetail']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
