@@ -61,6 +61,15 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <select class="form-select" aria-label="Default select example" name="role" style="width: 200px; display: block; margin: auto">
+                                <option selected>Sign up as</option>
+                                <option value="company">Company</option>
+                                <option value="employee">Company Employee</option>
+                                <option value="candidate">Candidate</option>
+                            </select>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

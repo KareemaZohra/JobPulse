@@ -10,4 +10,9 @@ class UserRoleMapping extends Model
     use HasFactory;
 
     protected $table = 'user_role_mapping';
+
+    public function userRole()
+    {
+        return $this->hasOne(UserRole::class, 'id', 'user_role_id');
+    }
 }

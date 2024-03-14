@@ -26,6 +26,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/contact">Contact</a>
                     </li>
+                    @auth()
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    @endauth
                 </ul>
             </ul>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Jobs;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -24,6 +25,9 @@ class HomeController extends Controller
             $recentJob->tags = $skills;
         }
 
-        return view('home', compact('topCompanies','jobsByCategory','recentJobs'));
+        $userId = Auth::id();
+        $user = User::with('userRoleMapping')->where('id',$userId)->first();
+
+        return view('home', compact('topCompanies','jobsByCategory','recentJobs','user'));
     }
 }
