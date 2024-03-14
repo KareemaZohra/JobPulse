@@ -41,3 +41,20 @@
     width: max-content;
     margin: auto;
 }
+.dashboard-menu{
+    background-color:#0047AB;
+    height: 100vh;
+    width: 100%;
+    padding: 50px;
+}
+.dashboard-menu ul>li>a{
+    color: white!important;
+    text-decoration: none;
+}
+.dashboard-menu ul>li{
+    padding: 15px;
+}
+ul{
+    list-style-type: none;
+}
+
