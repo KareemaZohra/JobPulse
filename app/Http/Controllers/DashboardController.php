@@ -73,7 +73,7 @@ class DashboardController extends Controller
 
     public function companyJobs(){
         $userId = Auth::id();
-        $jobs = Jobs::where('created_by',$userId)->paginate(5);
+        $jobs = Jobs::where('created_by',$userId)->withCount('candidates')->paginate(5);
 
         return view('Dashboard.company.jobs',compact('jobs'));
     }
@@ -83,5 +83,18 @@ class DashboardController extends Controller
         $employees = UserCompanyMapping::where('employer_id',$userId)->with('employee')->paginate(5);
 
         return view('Dashboard.company.employee',compact('employees'));
+    }
+
+    public function jobApplicants($id){
+        $applicants = JobCandidateMapping::where('job_id',$id)->with('User')->paginate(5);
+
+        return view('Dashboard.company.applicants',compact('applicants'));
+    }
+
+    public function ActionOnApplicant($id,$action){
+        JobCandidateMapping::where('id',$id)->update([
+            'status' => $action
+        ]);
+        return view('General.success');
     }
 }

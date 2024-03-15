@@ -12,36 +12,36 @@
                     <button type="button" class="btn btn-primary">Company</button>
                 </div>
                 <br><br>
-                <h1 class="text-center">See All Your Job Posts</h1>
+                <h1 class="text-center">See The Apllicants</h1>
                 <br><br>
                 <div class="row content-area">
 
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">Job Title</th>
-                            <th scope="col">Publish Date</th>
-                            <th scope="col">Edit/Delete</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Apply Date</th>
+                            <th scope="col">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($jobs as $job)
+                        @foreach($applicants as $applicant)
                             <tr>
-                                <td>{{$job->title}}</td>
+                                <td>{{$applicant->user->name}}</td>
                                 <td>
-                                    {{$job->updated_at}}
+                                    {{$applicant->created_at}}
                                 </td>
                                 <td>
-                                    <a href="/job/{{$job->id}}" type="button" class="btn btn-primary">view</a>
-                                    <a href="/job/{{$job->id}}/applicants" type="button" class="btn btn-primary">Applicants - {{$job->candidates_count}}</a>
-                                    <button type="button" class="btn btn-danger">Delete</button>
+                                    <a href="/dashboard/candidate/profile/{{$applicant->user->id}}" type="button" class="btn btn-primary">Applicant Profile</a>
+                                    <a href="/applicant/{{$applicant->id}}/{{"selected"}}" type="button" class="btn btn-success">Select</a>
+                                    <a href="/applicant/{{$applicant->id}}/{{"rejected"}}" type="button" class="btn btn-danger">Reject</a>
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
 
-                    <div class="paginate">{!! $jobs->links() !!}</div>
+                    <div class="paginate">{!! $applicants->links() !!}</div>
 
                 </div>
             </div>

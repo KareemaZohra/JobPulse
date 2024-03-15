@@ -36,10 +36,13 @@ Route::get('/dashboard/admin/employees',[DashboardController::class,'adminEmploy
 Route::get('/dashboard/candidate/dashboard',[DashboardController::class,'candidateDashboard'])->name('candidate.dashboard');
 Route::get('/dashboard/candidate/jobs',[DashboardController::class,'candidateJobs'])->name('candidate.jobs');
 
-Route::get('/dashboard/candidate/profile',[ProfileController::class,'getCandidateProfile'])->name('candidate.profile');
+Route::get('/dashboard/candidate/profile/{id}',[ProfileController::class,'getCandidateProfile']);
 Route::get('/profile/create',[ProfileController::class,'getProfileCreateForm']);
 Route::post('/profile/create',[ProfileController::class,'createProfile']);
 
 Route::get('/dashboard/company/dashboard',[DashboardController::class,'companyDashboard'])->name('company.dashboard');
 Route::get('/dashboard/company/jobs',[DashboardController::class,'companyJobs'])->name('company.jobs');
 Route::get('/dashboard/company/employees',[DashboardController::class,'companyEmployees'])->name('company.employees');
+Route::get('/job/{id}/applicants',[DashboardController::class,'jobApplicants']);
+Route::get('/applicant/{id}/{action}',[DashboardController::class,'ActionOnApplicant']);
+

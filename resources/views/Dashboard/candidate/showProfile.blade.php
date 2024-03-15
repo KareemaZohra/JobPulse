@@ -12,7 +12,11 @@
                     <button type="button" class="btn btn-primary">Candidate</button>
                 </div>
                 <br><br>
-                <h1 class="text-center">Your Resume</h1>
+                @if(Auth::user()->role=="candidate")
+                    <h1 class="text-center">Your Resume</h1>
+                @else
+                    <h1 class="text-center">Resume</h1>
+                @endif
                 <br><br>
                 <div class="row content-area">
                    @if($profile)
@@ -51,7 +55,11 @@
                        </div>
 
                     @else
-                       <p>You don't have a resume readied. <a href="/profile/create">Create One</a></p>
+                        @if(Auth::user()->role=="candidate")
+                            <p>You don't have a resume readied. <a href="/profile/create">Create One</a></p>
+                        @else
+                            <p>This candidate doesn't have a resume readied.</p>
+                        @endif
                     @endif
                 </div>
             </div>

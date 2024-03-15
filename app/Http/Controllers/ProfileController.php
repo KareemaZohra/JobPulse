@@ -8,9 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    public function getCandidateProfile(){
-        $userId = Auth::id();
-        $profile = Profiles::where('user_id',$userId)->first();
+    public function getCandidateProfile($id){
+        $profile = Profiles::where('user_id',$id)->first();
 
         return view('Dashboard.candidate.showProfile',compact('profile'));
     }
