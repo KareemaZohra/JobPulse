@@ -31,6 +31,7 @@ class CreateProfilesTable extends Migration
             $table->string('Designation')->nullable();
             $table->date('JoiningDate')->nullable();
             $table->date('LeavingDate')->nullable();
+            $table->string('skills');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')
                 ->restrictOnDelete()->cascadeOnUpdate();
@@ -38,7 +39,6 @@ class CreateProfilesTable extends Migration
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
-
     /**
      * Reverse the migrations.
      *

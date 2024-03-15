@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\JobCandidateMapping;
 use App\Models\Jobs;
+use App\Models\Profiles;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

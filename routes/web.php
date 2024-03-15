@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobsController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,8 @@ Route::get('/dashboard/admin/employees',[DashboardController::class,'adminEmploy
 
 Route::get('/dashboard/candidate/dashboard',[DashboardController::class,'candidateDashboard'])->name('candidate.dashboard');
 Route::get('/dashboard/candidate/jobs',[DashboardController::class,'candidateJobs'])->name('candidate.jobs');
-Route::get('/dashboard/candidate/profile',[DashboardController::class,'candidateProfile'])->name('candidate.profile');
 
+Route::get('/dashboard/candidate/profile',[ProfileController::class,'getCandidateProfile'])->name('candidate.profile');
+Route::get('/profile/create',[ProfileController::class,'getProfileCreateForm']);
+Route::post('/profile/create',[ProfileController::class,'createProfile']);
 
