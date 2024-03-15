@@ -6,6 +6,7 @@ use App\Models\JobCandidateMapping;
 use App\Models\Jobs;
 use App\Models\Profiles;
 use App\Models\User;
+use App\Models\UserCompanyMapping;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -60,5 +61,24 @@ class DashboardController extends Controller
         $appliedJobs = JobCandidateMapping::where('user_id',$userId)->with('Job')->paginate(5);
 
         return view('Dashboard.candidate.jobs',compact('appliedJobs'));
+    }
+
+    public function companyDashboard(){
+        $userId = Auth::id();
+       $jobPosts = Jobs::where('created_by',$userId)->count();
+       $employees = UserCompanyMapping::where('employer_id',$userId)->count();
+
+       return view('Dashboard.company.dashboard',compact('jobPosts','employees'));
+    }
+
+    public function companyJobs(){
+        $userId = Auth::id();
+        $jobs = Jobs::where('created_by',$userId)->paginate(5);
+
+        return view('Dashboard.company.jobs',compact('jobs'));
+    }
+
+    public function companyEmployees(){
+
     }
 }

@@ -40,3 +40,6 @@ Route::get('/dashboard/candidate/profile',[ProfileController::class,'getCandidat
 Route::get('/profile/create',[ProfileController::class,'getProfileCreateForm']);
 Route::post('/profile/create',[ProfileController::class,'createProfile']);
 
+Route::get('/dashboard/company/dashboard',[DashboardController::class,'companyDashboard'])->name('company.dashboard');
+Route::get('/dashboard/company/jobs',[DashboardController::class,'companyJobs'])->name('company.jobs');
+Route::get('/dashboard/company/employees',[DashboardController::class,'companyEmployees'])->name('company.employees');
