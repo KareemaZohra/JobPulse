@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JobCandidateMapping;
 use App\Models\Jobs;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -44,5 +45,19 @@ class DashboardController extends Controller
         $employees = User::where('role','!=','company')->where('role','!=','admin')->paginate(5);
 
         return view('Dashboard.admin.employees',compact('employees'));
+    }
+
+    public function candidateDashboard(){
+        $userId = Auth::id();
+        $applied = JobCandidateMapping::where('user_id',$userId)->count();
+
+        return view('Dashboard.candidate.dashboard',compact('applied'));
+    }
+
+    public function candidateJobs(){
+        $userId = Auth::id();
+        $appliedJobs = JobCandidateMapping::where('user_id',$userId)->with('Job')->paginate(5);
+
+        return view('Dashboard.candidate.jobs',compact('appliedJobs'));
     }
 }

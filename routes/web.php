@@ -32,3 +32,8 @@ Route::get('/dashboard/admin/companies',[DashboardController::class,'adminCompan
 Route::get('/dashboard/admin/jobs',[DashboardController::class,'adminJobs'])->name('admin.jobs');
 Route::get('/dashboard/admin/employees',[DashboardController::class,'adminEmployees'])->name('admin.employees');
 
+Route::get('/dashboard/candidate/dashboard',[DashboardController::class,'candidateDashboard'])->name('candidate.dashboard');
+Route::get('/dashboard/candidate/jobs',[DashboardController::class,'candidateJobs'])->name('candidate.jobs');
+Route::get('/dashboard/candidate/profile',[DashboardController::class,'candidateProfile'])->name('candidate.profile');
+
+
