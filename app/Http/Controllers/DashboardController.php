@@ -79,6 +79,9 @@ class DashboardController extends Controller
     }
 
     public function companyEmployees(){
+        $userId = Auth::id();
+        $employees = UserCompanyMapping::where('employer_id',$userId)->with('employee')->paginate(5);
 
+        return view('Dashboard.company.employee',compact('employees'));
     }
 }
