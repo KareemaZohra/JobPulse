@@ -3,7 +3,9 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobsController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,11 +40,19 @@ Route::get('/dashboard/candidate/jobs',[DashboardController::class,'candidateJob
 
 Route::get('/dashboard/candidate/profile/{id}',[ProfileController::class,'getCandidateProfile']);
 Route::get('/profile/create',[ProfileController::class,'getProfileCreateForm']);
-Route::post('/profile/create',[ProfileController::class,'createProfile']);
+Route::post('/profile/create',[ProfileController::class,'createProfile'])->name('candidate.profile');
 
 Route::get('/dashboard/company/dashboard',[DashboardController::class,'companyDashboard'])->name('company.dashboard');
 Route::get('/dashboard/company/jobs',[DashboardController::class,'companyJobs'])->name('company.jobs');
 Route::get('/dashboard/company/employees',[DashboardController::class,'companyEmployees'])->name('company.employees');
 Route::get('/job/{id}/applicants',[DashboardController::class,'jobApplicants']);
 Route::get('/applicant/{id}/{action}',[DashboardController::class,'ActionOnApplicant']);
+
+Route::get('/page/create',[PageController::class,'pageCreateForm']);
+
+Route::get('/account',[UserController::class,'showAccount'])->name('account.show');
+Route::get('/account/edit/{id}',[UserController::class,'accountEditForm']);
+Route::post('/account/update',[UserController::class,'accountUpdate']);
+
+
 
