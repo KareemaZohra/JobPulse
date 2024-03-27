@@ -48,11 +48,14 @@ Route::get('/dashboard/company/employees',[DashboardController::class,'companyEm
 Route::get('/job/{id}/applicants',[DashboardController::class,'jobApplicants']);
 Route::get('/applicant/{id}/{action}',[DashboardController::class,'ActionOnApplicant']);
 
-Route::get('/page/create',[PageController::class,'pageCreateForm']);
-
 Route::get('/account',[UserController::class,'showAccount'])->name('account.show');
 Route::get('/account/edit/{id}',[UserController::class,'accountEditForm']);
 Route::post('/account/update',[UserController::class,'accountUpdate']);
+
+Route::get('/pages',[PageController::class,'showPagesHome'])->name('page.home');
+Route::get('/page/create',[PageController::class,'pageCreateForm']);
+Route::post('/page/create',[PageController::class,'pageCreate']);
+Route::get('/{key}',[PageController::class,'showPage']);
 
 
 

@@ -10,4 +10,13 @@ class Pages extends Model
     use HasFactory;
 
     protected $table = 'pages';
+
+    protected $fillable = [
+        'name',
+        'key',
+        'title',
+        'description',
+        'banner',
+        'user_id'
+    ];
 }
