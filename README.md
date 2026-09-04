@@ -2,9 +2,6 @@
 
 A role-based **job board & recruitment platform** built with Laravel 8. Companies post jobs, candidates browse and apply, and admins oversee the whole marketplace — each with a dedicated dashboard.
 
-> 📹 **Demo videos:**
-> [Walkthrough](https://www.loom.com/share/7688b244e61e45ba873f68e270d8dc5f) · [More work](https://www.loom.com/share/daf8c06fb71b40ceb7b0cf06a0102e66)
-
 ---
 
 ## Overview
@@ -141,6 +138,7 @@ routes/web.php          # Application routes
 ```
 
 ---
+📹 Demo videos:
 
 see the video here : https://www.loom.com/share/7688b244e61e45ba873f68e270d8dc5f?sid=83454951-e463-448a-a386-913038cbcd13
 
